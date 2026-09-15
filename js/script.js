@@ -3,6 +3,8 @@ const dots = document.querySelectorAll(".step-dot");
 const next = document.querySelectorAll(".next");
 const back = document.querySelectorAll(".back");
 const success = document.querySelector(".success-page");
+const dob = document.querySelector("#dob");
+dob.max = new Date().toISOString().split("T")[0];
 let current = 0;
 function validate() {
     const inputs = steps[current].querySelectorAll("input");
@@ -16,14 +18,17 @@ function validate() {
             error(input, "This field is required");
             valid = false;
         }
+
         else if (input.id === "name" && !/^[A-Za-z ]+$/.test(input.value)) {
             error(input, "Only characters are allowed");
             valid = false;
         }
+
         else if (input.id === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
             error(input, "Enter a valid email");
             valid = false;
         }
+
         else if (input.id === "mobile" && !/^[0-9]{10}$/.test(input.value)) {
             error(input, "Mobile number must be 10 digits");
             valid = false;
@@ -36,18 +41,22 @@ function validate() {
             error(input, "Pin code must be 6 digits");
             valid = false;
         }
+        else if (input.id === "dob" && input.value > dob.max) {
+            error(input, "Date cannot be in the future");
+            valid = false;
+        }
     });
     return valid;
 }
 function error(input, message) {
     input.style.border = "2px solid red";
-	input.style.marginBottom = "2px";
+    input.style.marginBottom = "2px";
     const text = document.createElement("p");
     text.className = "error";
     text.textContent = message;
     text.style.color = "red";
     text.style.fontSize = "12px";
-	text.style.marginBottom = "20px";
+    text.style.marginBottom = "20px";
     input.after(text);
 }
 next.forEach(function(button) {
@@ -61,7 +70,8 @@ next.forEach(function(button) {
             current++;
             steps[current].classList.add("active");
             dots[current].classList.add("active");
-        } else {
+        } 
+        else {
             steps[current].classList.remove("active");
             success.style.display = "block";
         }
