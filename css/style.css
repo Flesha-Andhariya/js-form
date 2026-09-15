@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #f3f3f3,
+        #e8f5dc
+    );
+    color: #191a23;
+}
+#stepForm {
+    width: 100%;
+    max-width: 600px;
+    height: 750px;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+}
+#stepForm h1 {
+    text-align: center;
+	color: #000000;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+.step-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+.step-dot span {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #eeeeee;
+    color: #777;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.step-dot p {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #777;
+}
+.step-dot.active span {
+    background: #c3eefb;
+    color: #191a23;
+}
+.line {
+    width: 80px;
+    height: 3px;
+    margin-top: 21px;
+    background: #dddddd;
+}
+.step {
+    display: none;
+}
+.step.active {
+    display: block;
+}
+.step h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+	text-align: center;
+	color: #ff9d9d;
+}
+.step label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.step input {
+    width: 100%;
+    padding: 20px 0 20px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #d5d8dc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+.step input:focus {
+    border-color: #191a23;
+}
+.step input[type="date"] {
+    cursor: pointer;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.next,
+.back {
+    padding: 20px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.next {
+    background: #191a23;
+    color: #ffffff;
+}
+.next:hover {
+    background: #33343d;
+    transform: translateY(-2px);
+}
+.step.active > .next {
+	margin-left: 414px;
+}
+.back {
+    background: #eeeeee;
+    color: #191a23;
+}
+.back:hover {
+    background: #dddddd;
+    transform: translateY(-2px);
+}
+.success-page {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+}
+.success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #b9ff66;
+    color: #191a23;
+    font-size: 40px;
+    font-weight: bold;
+}
+.success-page h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.success-page p {
+    color: #777;
+    font-size: 16px;
+}
