@@ -29,7 +29,6 @@ body {
     text-align: center;
     color: #000000;
     font-size: 35px;
-    color: #cf2828;
     margin-bottom: 40px;
 }
 .steps {
@@ -85,7 +84,7 @@ body {
 }
 .step label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-size: 15px;
     font-weight: 600;
 }
@@ -126,9 +125,6 @@ body {
     background: #33343d;
     transform: translateY(-2px);
 }
-.step.active > .next {
-	margin-left: 414px;
-}
 .back {
     background: #eeeeee;
     color: #191a23;
@@ -163,3 +159,11 @@ body {
     color: #777;
     font-size: 16px;
 }
+.error {
+    color: red;
+}
+.step input.error {
+    border: 1px solid red;
+    margin-bottom: inherit;
+}
+

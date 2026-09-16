@@ -1,9 +1,12 @@
 <html>
 <head>
     <title>3 Step Form</title>
-		<link rel="stylesheet" href="css\style.css">
-		<script src="js/script.js" defer></script>
-	</head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+    <link rel="stylesheet" href="css\style.css">
+    <script src="js/script.js" defer></script>
+</head>
 	<body>
 		<form id="stepForm">
 			<h1>Registration Form</h1>
@@ -31,7 +34,9 @@
 				<input
 					type="text"
 					id="name"
+					name="name"
 					placeholder="Enter Name"
+					pattern="[A-Za-z ]+"
 					required
 				>
 				<label for="email">
@@ -40,6 +45,7 @@
 				<input
 					type="email"
 					id="email"
+					name="email"
 					placeholder="Enter Email"
 					required					
 				>
@@ -49,6 +55,7 @@
 				<input
 					type="tel"
 					id="mobile"
+					name="mobile"
 					placeholder="Enter Mobile No."
 					required	
 				>
@@ -64,6 +71,7 @@
 				<input
 					type="text"
 					id="address"
+					name="address"
 					placeholder="Enter Address"
 					required					
 				>
@@ -73,6 +81,7 @@
 				<input
 					type="text"
 					id="city"
+					name="city"
 					placeholder="Enter City"
 					required					
 				>
@@ -82,6 +91,7 @@
 				<input
 					type="text"
 					id="pincode"
+					name="pincode"
 					placeholder="Enter Pin Code"
 					required
 				>
@@ -102,6 +112,7 @@
 				<input 
 					type="date" 
 					id="dob" 
+					name="dob"
 					max="2026-09-15"
 					required
 				>
